@@ -30,16 +30,20 @@ MinStack.prototype.top = function() {
  * @return {number}
  */
 MinStack.prototype.getMin = function() {
-    let temp = [];
-    let min = this.stack[this.stack.length-1];
-    while(this.stack.length>0){
-        min = Math.min(min,this.stack[this.stack.length-1]);
-        temp.push(this.stack.pop())
-    }
-    while(temp.length>0){
-        this.stack.push(temp.pop())
-    }
-    return min;
+   let temp = [];
+   let min = this.stack[this.stack.length-1];
+while(this.stack.length>0){
+    min = Math.min(min,this.stack[this.stack.length-1]);
+
+    temp.push(this.stack.pop());
+
+}
+
+while(temp.length>0){
+    this.stack.push(temp.pop())
+}
+return min;
+
 };
 
 /** 
