@@ -1,4 +1,12 @@
 import java.util.Arrays;
+
+//take one hashmap
+//add all character count of string a
+//chk sec string
+//if both lengths are not equal return FALSE;
+
+//if map doesnt  conatins same characters return false
+//NEW COUNT STORE ALL CHARCTERS OF SEC STRING
 import java.util.HashMap;
 
 public class AnagramUsingHashMap {
@@ -27,7 +35,7 @@ char c = t.charAt(i);
 if(!freq.containsKey(c)){
     return false;
 }
-int newCount = freq.get(c);
+int newCount = freq.get(c);//here it is getting character count
 if(newCount == 0){
     return false;
 }
