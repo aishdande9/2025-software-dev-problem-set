@@ -9,15 +9,16 @@ public class TwoSumUsingHashMap {
 
         System.out.println(Arrays.toString(twoSum(nums, target)));
     }
+
     public static int[] twoSum(int[] nums, int target) {
 
-        Map<Integer,Integer> freq = new HashMap<>();
-        for(int i=0;i<nums.length;i++){
-            int compliment = target-nums[i];
-            if(freq.containsKey(compliment)){
-return new int[]{freq.get(compliment),i};
-            }else{
-                freq.put(nums[i],i);
+        Map<Integer, Integer> freq = new HashMap<>();
+        for (int i = 0; i < nums.length; i++) {
+            int compliment = target - nums[i];
+            if (freq.containsKey(compliment)) {
+                return new int[]{freq.get(compliment), i};
+            } else {
+                freq.put(nums[i], i);
             }
         }
 
@@ -25,4 +26,5 @@ return new int[]{freq.get(compliment),i};
 
     }
 }
+
 
