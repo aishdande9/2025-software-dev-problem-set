@@ -1,5 +1,7 @@
 import java.util.Stack;
 
+import static java.lang.Integer.parseInt;
+
 public class ReversePolish {
     public static void main(String[] args) {
 
@@ -10,35 +12,32 @@ public class ReversePolish {
 
 
         public static int evalRPN(String[] tokens) {
-            Stack<Integer> stack = new Stack<>();
 
+        Stack<Integer> stack = new Stack<>();
+        for(String i:tokens){
+            if(i.equals("+")){
+                int a = stack.pop();
+                int b = stack.pop();
+                stack.push(a+b);
 
-            for(String i:tokens){
+            }else if(i.equals("-")){
+                int a = stack.pop();
+                int b = stack.pop();
+                stack.push(b-a);
+            }else if(i.equals("*")){
+                int a = stack.pop();
+                int b = stack.pop();
+                stack.push(a*b);
+            }else if(i.equals("/")) {
+                int a = stack.pop();
+                int b = stack.pop();
+                stack.push(b / a);
+            }else{
 
-                if(i.equals("+")){
-                    int a  = stack.pop();
-                    int b = stack.pop();
-                    stack.push(a+b);
-                }else if(i.equals("-")){
-                    int a  = stack.pop();
-                    int b = stack.pop();
-                    stack.push(b-a);
-                }else if(i.equals("*")){
-                    int a  = stack.pop();
-                    int b = stack.pop();
-                    stack.push(a*b);
-
-                }else if(i.equals("/")){
-                    int a  = stack.pop();
-                    int b = stack.pop();
-                    stack.push(b/a);
-                }
-                else{
-                    stack.push(Integer.parseInt(i));
-                }
+                stack.push(Integer.parseInt(i));
             }
-
-            return stack.pop();
         }
-    }
 
+        return stack.pop();
+        }
+        }
